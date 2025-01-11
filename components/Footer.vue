@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex justify-between items-start px-6 border-t border-[#e8e8e8] pt-10 pb-8"
+    class="flex justify-between items-start px-6 border-t border-[#e8e8e8] pt-10 pb-8 mt-14"
   >
     <div class="hidden lg:flex flex-col gap-y-6">
       <h2 class="text-base font-bold">دسترسی سریع</h2>

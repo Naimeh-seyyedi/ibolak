@@ -15,7 +15,7 @@
         />
       </div>
     </div>
-    <product-category
+   <div class="space-y-8"> <product-category
       :quickCategories="quickCategories"
       :title="'جدیدترین ها'"
     ></product-category>
@@ -30,7 +30,8 @@
     <product-category
       :quickCategories="quickCategories"
       :title="'کیف ها'"
-    ></product-category>
+    ></product-category></div>
+
   </div>
 </template>
 
@@ -73,7 +74,7 @@ export default defineComponent({
 
 <style scoped>
 .container {
-  perspective: 1000px; 
+  perspective: 1000px;
 }
 .grid-cols-4 {
   display: grid;

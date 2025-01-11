@@ -1,13 +1,13 @@
 <template>
   <div class="mx-auto">
     <div class="flex justify-between items-center">
-      <div class="inline-flex items-center gap-x-6 text-3xl">
-        <img src="/assets/icons/dots.svg" class="mr-2" />
+      <div class="inline-flex items-center text-sm lg:gap-x-6 lg:text-3xl">
+        <img src="/assets/icons/dots.svg" class="ml-2" />
         {{ title }}
       </div>
       <nuxt-link
         to="/"
-        class="px-12 py-4 text-[0.9rem] rounded-[50px] border border-[#323232] hover:bg-secondary hover:text-neutral-0"
+        class="text-primary lg:text-neutral text-sm lg:rounded-[50px] lg:border lg:border-[#323232] lg:px-12 lg:py-4 hover:bg-secondary hover:text-neutral-0"
       >
         مشاهده همه
       </nuxt-link>
@@ -23,7 +23,7 @@
         data-container-add="flex items-stretch w-full"
       >
         <template #item="{ item, index }">
-          <product-bundle-home
+          <clothing-item
             :index="index"
             :item="item"
             :class="[
@@ -33,6 +33,7 @@
               },
             ]"
           />
+          
         </template>
 
         <template #prev="{ activator, disabled }">

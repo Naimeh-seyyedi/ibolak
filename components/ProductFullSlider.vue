@@ -10,7 +10,7 @@
     :autoPlayInterval="3000"
   >
     <template #item="{ item, index }">
-      <product-bundle-home-full
+      <clothing-slide
         :item="item"
         :class="[
           {

@@ -13,9 +13,7 @@
         ref="categoryRef"
       />
     </div>
-    <div class="p-4">
-      {{ item.name }}
-    </div>
+ 
   </div>
 </template>
 

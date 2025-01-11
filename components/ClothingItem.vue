@@ -1,9 +1,7 @@
 <template>
- 
   <div
-    class="flex flex-col items-center justify-between p-2 pt-5 w-[10rem] lg:w-[15rem] cursor-default min-h-[20rem] lg:min-h-[23rem]"
+    class="flex flex-col  p-2 pt-5 w-[10rem] lg:w-[15rem] cursor-default min-h-[20rem] lg:min-h-[23rem]"
   >
-
     <div
       class="container w-full h-full rounded-2xl bg-neutral-100 relative overflow-hidden"
       :class="[
@@ -23,12 +21,25 @@
         v-show="isHovered"
         class="absolute top-4 right-2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold text-xl z-20"
       >
-      <icon-svg class="text-[2rem]" filled :name="'like'"></icon-svg>
+        <icon-svg class="text-[2rem]" filled :name="'like'"></icon-svg>
       </div>
-    
       <div
         v-show="isHovered"
-        class="absolute bottom-1 left-1/2  transform -translate-x-1/2 -translate-y-1/2 text-white font-bold text-xl z-20"
+        class="absolute top-8 right-3 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold text-xl z-20"
+      >
+        <div
+          class="bg-white w-11 h-11 rounded-lg flex items-center justify-center"
+        >
+          <img
+            src="@/assets/img/like.svg"
+            alt="logo"
+            class="w-6 h-6 border-gray-50"
+          />
+        </div>
+      </div>
+      <div
+        v-show="isHovered"
+        class="absolute bottom-1 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold text-xl z-20"
       >
         <div class="flex justify-between gap-2 items-center">
           <div class="w-14 h-14">
@@ -43,8 +54,20 @@
         </div>
       </div>
     </div>
-    <div class="p-4">
-      {{ item.name }}
+
+    <div class="flex justify-between">
+      <div>
+        <div class="text-sm text-gray-400">
+          {{ item.name }}
+        </div>
+        <div>
+          {{ item.description }}
+        </div>
+      </div>
+     <div>
+      <div class="text-primary">{{ item.price }}</div>
+      <div class="text-sm text-gray-400">تومان</div>
+     </div>
     </div>
   </div>
 </template>
@@ -56,34 +79,35 @@ interface Category {
   iconSrc: string;
   name: string;
   description: string;
+  price: string;
 }
 
 import gsap from "gsap";
 import { useLongTextHover } from "~/composables/useLongTextHover";
 
-const props = defineProps<{ item: Category; index: number  }>();
+const props = defineProps<{ item: Category; index: number }>();
 
 console.log("itemitem", props.item);
 const categoryRef = ref<HTMLElement | null>(null);
-const isHovered = ref(false); 
+const isHovered = ref(false);
 
 const onMouseOver = () => {
-  isHovered.value = true; 
+  isHovered.value = true;
   gsap.to(categoryRef.value, {
-    scale: 1.1, 
-    zIndex: 10, 
-    duration: 0.3, 
+    scale: 1.1,
+    zIndex: 10,
+    duration: 0.3,
     transformOrigin: "center center",
   });
 };
 
 const onMouseLeave = () => {
-  isHovered.value = false; 
+  isHovered.value = false;
   gsap.to(categoryRef.value, {
-    scale: 1, 
-    zIndex: 1, 
-    duration: 0.3, 
-    transformOrigin: "center center", 
+    scale: 1,
+    zIndex: 1,
+    duration: 0.3,
+    transformOrigin: "center center",
   });
 };
 

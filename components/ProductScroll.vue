@@ -12,7 +12,7 @@
           class="w-20 h-20 rounded-full object-cover"
         />
         <p class="text-sm mt-2 font-medium">{{ product.name }}</p>
-        <p class="text-xs text-gray-500">{{ product.price }}</p>
+       
       </div>
     </div>
   </div>
