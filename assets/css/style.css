@@ -1,0 +1,7 @@
+@import url("./fontiranYekan.css");
+body {
+  font-family: IRANYekanXVF !important;
+  -moz-font-feature-settings: "ss02";
+  -webkit-font-feature-settings: "ss02";
+  font-feature-settings: "ss02";
+}
