@@ -1,25 +1,25 @@
 <template>
   <div class="pt-8 border-b border-[#e8e8e8] px-6">
-    <div class="flex justify-between mb-4">
-      <div class="flex justify-between gap-4">
+    <div class="flex justify-between items-center mb-4 ">
+      <div class="flex justify-between items-center gap-4 ">
         <nuxt-link
           to="/basket"
-          class="flex items-center justify-center gap-2  p-4 text-[0.9rem] rounded-2xl border border-[#323232] hover:bg-secondary hover:text-neutral-0 "
+          class="flex items-center justify-center gap-2 p-4  rounded-2xl border border-[#323232] hover:bg-secondary hover:text-neutral-0 "
         >
-          <icon-svg name="vuesax-outline:import-1" class="text-2xl"></icon-svg>
-          <span >سبد خرید</span>
-          <div className="badge badge-ghost text-sm badge-xs">0</div>
+          <icon-svg name="vuesax-outline:import-1" class=" text-xl"></icon-svg>
+          <span class=" text-[0.9rem]">سبد خرید</span>
+          <div className="badge badge-ghost  text-[0.9rem] badge-xs">0</div>
         </nuxt-link>
         <div
-          class="app-button flex items-center justify-center p-4 text-[0.9rem] rounded-2xl bg-primary cursor-pointer"
+          class="flex items-center justify-center p-4   rounded-2xl bg-primary cursor-pointer"
         >
-          <icon-svg name="vuesax-outline:user" class="text-2xl"></icon-svg>
-          <span class="text-neutral-1000">حساب کاربری</span>
+          <icon-svg name="vuesax-outline:user" class="text-xl"></icon-svg>
+          <span class="text-[0.9rem]">حساب کاربری</span>
         </div>
         <!-- جستجو -->
-        <home-search-box />
+       <home-search-box />
       </div>
-      <img src="@/assets/img/ibolak-logo.svg" alt="logo" class="h-14" />
+      <img src="@/assets/img/ibolak-logo.svg" alt="logo" class="h-[3.125rem]" />
     </div>
 
     <!-- بخش پایینی -->
@@ -65,3 +65,16 @@ const {
   toggle: menuToggle,
 } = useDesktopMenu(true);
 </script>
+<style scoped>
+.badge-xs {
+  width: 1.5rem; 
+  height: 1.5rem;
+  font-size: 0.75rem; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; 
+  background-color: #f0f0f0;
+  color: #333; 
+}
+</style>
