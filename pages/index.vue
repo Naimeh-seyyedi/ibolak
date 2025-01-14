@@ -58,7 +58,6 @@ export default defineComponent({
         const data = await response.json();
 
         quickCategories.value = data;
-        console.log("resres", data);
       } catch (error) {
         console.error("Error loading products.json:", error);
       }

@@ -3,23 +3,19 @@
     v-for="(item, index) in menuData"
     :key="index"
     class="dropdown dropdown-hover pb-8"
+    :tabIndex="index"
+    @mouseenter="showDots(index)"
+    @mouseleave="hideDots"
+    role="button"
   >
-    <div
-      class="relative flex items-center gap-2"
-      role="button"
-      :tabIndex="index"
-      @mouseenter="showDots(index)"
-      @mouseleave="hideDots(index)"
-    >
-      <div>
-        {{ item.title }}
-      </div>
+    <div class="relative flex items-center gap-2" >
+      <div>{{ item.title }}</div>
       <icon-svg v-if="index < 3" :name="item.icon" class="text-sm"></icon-svg>
-      <div v-if="isHovered[index]" class="loader"></div>
+      <div v-if="activeIndex === index" class="loader"></div>
     </div>
 
     <ul
-      v-if="item.children && item.children.length > 0"
+      v-if="activeIndex === index && item.children && item.children.length > 0"
       :tabIndex="index"
       class="dropdown-content mt-9 cursor-pointer bg-neutral-0 flex flex-row justify-between gap-14 rounded-b-xl min-w-full border border-[#e8e8e8] z-30 p-2"
     >
@@ -32,12 +28,11 @@
           {{ child.title }}
         </div>
 
-        <!-- SubItems -->
         <ul
           v-if="child.subItems && child.subItems.length > 0"
           class="ml-4 space-y-4"
         >
-          <li
+        <li
             v-for="(subItem, subIndex) in child.subItems"
             :key="`${childIndex}-${subIndex}`"
             class="flex items-center gap-x-2 whitespace-nowrap"
@@ -79,19 +74,16 @@
     </ul>
   </div>
 </template>
-
 <script lang="ts" setup>
 import { ref } from "vue";
-
-const isHovered = ref<Record<number, boolean>>({});
-const hoveredSubItem = ref<string | null>(null);
-
+const activeIndex = ref<number | null>(null);
+  const hoveredSubItem = ref<string | null>(null);
 const showDots = (index: number) => {
-  isHovered.value[index] = true;
+  activeIndex.value = index;
 };
 
-const hideDots = (index: number) => {
-  isHovered.value[index] = false;
+const hideDots = () => {
+  activeIndex.value = null;
 };
 
 const menuData = [
@@ -182,6 +174,6 @@ const menuData = [
 }
 
 .border-gray-300 {
-  border-color: #e2e8f0; /* Neutral border color */
+  border-color: #e2e8f0; 
 }
 </style>

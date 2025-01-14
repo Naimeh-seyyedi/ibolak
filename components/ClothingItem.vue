@@ -86,8 +86,6 @@ import gsap from "gsap";
 import { useLongTextHover } from "~/composables/useLongTextHover";
 
 const props = defineProps<{ item: Category; index: number }>();
-
-console.log("itemitem", props.item);
 const categoryRef = ref<HTMLElement | null>(null);
 const isHovered = ref(false);
 
