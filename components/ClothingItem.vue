@@ -1,9 +1,9 @@
 <template>
   <div
-    class="flex flex-col  p-2 pt-5 w-[12.5rem] lg:w-[15rem] cursor-default min-h-[20rem]  lg:min-h-[23rem]"
+    class="flex flex-col  p-2 pt-5  w-60 lg:w-62 cursor-pointer min-h-[20rem]  lg:min-h-[23rem]"
   >
     <div
-      class="container  h-[16.625rem] rounded-2xl bg-neutral-100 relative overflow-hidden "
+      class="container h-[320px]   w-full   rounded-2xl  relative overflow-hidden "
       :class="[
         { 'bg-primary-50': index === 0 },
         { 'bg-secondary-50': index === 1 },
@@ -13,7 +13,7 @@
     >
       <img
         :src="item.imageSrc"
-        class="image w-full h-full  absolute z-10 transition-transform duration-300"
+        class="image w-full h-full  absolute z-10 transition-transform duration-300 object-cover"
         :alt="item.name"
         ref="categoryRef"
       />
@@ -55,7 +55,7 @@
       </div>
     </div>
 
-    <div class="flex justify-between">
+    <div class="flex justify-between pt-2">
       <div>
         <div class="text-sm text-gray-400">
           {{ item.name }}

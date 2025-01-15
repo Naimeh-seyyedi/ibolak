@@ -15,23 +15,24 @@
         />
       </div>
     </div>
-   <div class="space-y-8"> <product-category
-      :quickCategories="quickCategories"
-      :title="'جدیدترین ها'"
-    ></product-category>
-    <product-category
-      :quickCategories="quickCategories"
-      :title="'کت ها'"
-    ></product-category>
-    <product-category
-      :quickCategories="quickCategories"
-      :title="' پالتو و بارانی'"
-    ></product-category>
-    <product-category
-      :quickCategories="quickCategories"
-      :title="'کیف ها'"
-    ></product-category></div>
-
+    <div class="space-y-10 mt-10">
+      <product-category
+        :quickCategories="quickCategories"
+        :title="'جدیدترین ها'"
+      ></product-category>
+      <product-category
+        :quickCategories="quickCategories"
+        :title="'کت ها'"
+      ></product-category>
+      <product-category
+        :quickCategories="quickCategories"
+        :title="' پالتو و بارانی'"
+      ></product-category>
+      <product-category
+        :quickCategories="quickCategories"
+        :title="'کیف ها'"
+      ></product-category>
+    </div>
   </div>
 </template>
 

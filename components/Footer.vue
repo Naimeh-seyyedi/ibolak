@@ -1,6 +1,7 @@
 <template>
-  <div
-    class="flex justify-between items-start px-6 border-t border-[#e8e8e8] pt-10 pb-8 mt-14"
+  <div class="border-t border-[#e8e8e8] pt-10 pb-8 mt-14 ">
+    <div
+    class="container mx-auto flex justify-between items-start "
   >
     <div class="hidden lg:flex flex-col gap-y-6">
       <h2 class="text-base font-bold">دسترسی سریع</h2>
@@ -18,7 +19,7 @@
         </div>
       </div>
     </div>
-    <div class="mr-auto pt-0 space-y-6">
+    <div class="lg:mr-auto lg:pt-0 space-y-6">
       <h2 class="text-base font-bold">فروشگاه اینترنتی پوشاک آی‌بولک</h2>
       <div>
         <span class="text-base font-bold"> آدرس فروشگاه:</span> گرگان، بلوار
@@ -30,6 +31,8 @@
       <diV><span class="text-base font-bold">شماره های تماس:</span> 01732534106-9</diV>
     </div>
   </div>
+  </div>
+ 
 </template>
 <script setup lang="ts">
 const footerTitle = ref([
