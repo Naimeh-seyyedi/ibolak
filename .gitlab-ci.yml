@@ -1,0 +1,24 @@
+image: node:22.13 
+
+stages:
+  - build
+  - deploy
+build:
+  stage: build
+  script:
+    - npm install 
+    - npm run generate 
+  artifacts:
+    paths:
+      - .output/public 
+  only:
+    - home-page 
+pages:
+  stage: deploy
+  script:
+    - mv .output/public public 
+  artifacts:
+    paths:
+      - public
+  only:
+    - home-page 
